@@ -1,0 +1,18 @@
+
+@{
+    ViewBag.Title = " Employer_View";
+}
+        <div class="card m-3">
+            <div class="card-header">
+                <h3>@ViewBag.Employee.Name</h3>
+            </div>
+            <img class="card-img-top" src ="~/pinkpanter.jpg" />
+            <h3>@ViewBag.Employee.Name <br>
+                @ViewBag.Employee.Email<br>
+                @ViewBag.Employee.Department</h3>
+            <div class="card-footer text-center">
+                <a asp-controller="Produto" asp-action="Index" class="btn btn-primary">Back</a>
+                <a asp-action="Edit" asp-controller="Produto" asp-route-id="@ViewBag.Employee.Id" class="btn btn-dark">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>   

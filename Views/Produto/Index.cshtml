@@ -1,0 +1,25 @@
+@page
+@model employee_manager.Models.Employee
+@{
+    
+    ViewBag.Title = "All Employers View";
+}
+
+<div class="card-deck">
+    @foreach(var aux in ViewBag.All_Employee)
+    {
+        <div class="card m-3">
+            <div class="card-header">
+                <h3>@aux.Name</h3>
+            </div>
+            <img class="card-img-top" src ="~/pinkpanter.jpg" 
+            asp-append-version = "true" />
+            <div class="card-footer text-center">
+                <a asp-action="Details" asp-controller="Produto" asp-route-id="@aux.Id" class="btn btn-dark">View</a>
+                <a asp-action="Edit" asp-controller="Produto" asp-route-id="@aux.Id" class="btn btn-dark">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>       
+    }
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+</div>
